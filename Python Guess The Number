@@ -1,0 +1,34 @@
+print("Você está começando o jogo 'Divination'!")
+print('🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮🔮')
+print('')
+
+Número_Secreto = 29
+Tentativa = 5
+Tentativas_Totais = 5
+
+while(Tentativa > 0):
+    print("Tentativa {} de {}". format(Tentativa, Tentativas_Totais))
+    Resposta = input('Digite um número entre 1 e 50: ')
+    Resposta_int = int(Resposta)
+    Acertou = Número_Secreto == Resposta_int
+    Abaixo = Número_Secreto < Resposta_int
+    Acima = Número_Secreto > Resposta_int
+
+    if (Resposta_int < 1 or Resposta_int > 50):
+        print('Você inseriu um valor não aceitável, tente novamente.')
+        continue
+
+    print("Você escolheu:", Resposta)
+    if Acertou:
+        print('PARABÉNS! VOCÊ ACERTOU!')
+        print('🎇🌟🎇🌟🏆🏆🏆🌟🎇🌟🎇')
+        break
+    else:
+        if Abaixo:
+            print('Infelizmente essa não é a resposta. O seu palpite foi acima do resultado.')
+        elif Acima:
+            print('Infelizmente essa não é a resposta. O seu palpite foi abaixo do resultado.')
+    Tentativa = Tentativa - 1
+
+print("")
+print("Fim de Jogo")
